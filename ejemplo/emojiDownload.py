@@ -24,11 +24,12 @@ class EmojisDownload(object):
         with open(self.path, newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quoting=csv.QUOTE_NONE)
             for row in reader:
-                print(row[0])
-                if os.chdir(self.path_emoti + row[0]):
+                print(self.path_emoti + '\\' + row[0])
+                print(os.chdir(self.path_emoti + '\\' + row[0]))
+                '''if os.chdir(self.path_emoti + '/' + row[0]):
                     print("existe el directorio")
-                elif:
-                    
+                else:
+                    print("el directorio no existe")'''
                     
     def result_search(self, search):
         self.agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
